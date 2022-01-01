@@ -93,7 +93,7 @@ const BeARider = () => {
     // e.preventDefault();
     console.log(riderData);
 
-    fetch("http://localhost:4000/addRider", {
+    fetch("https://warm-dusk-05608.herokuapp.com//addRider", {
       method: "POST",
       headers: {
         "content-type": "application/json",

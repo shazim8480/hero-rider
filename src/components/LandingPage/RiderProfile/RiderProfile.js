@@ -10,7 +10,7 @@ const RiderProfile = () => {
   const [riderDetails, setRiderDetails] = useState({});
 
   useEffect(() => {
-    const url = `http://localhost:4000/rider/${id}`;
+    const url = `https://warm-dusk-05608.herokuapp.com//rider/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setRiderDetails(data));
