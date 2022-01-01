@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
+// import RiderProfileDetails from "./RiderProfileDetails";
 
 const RiderProfile = () => {
+  const { id } = useParams();
+
+  //finding the selected service id to show service details////
+  const [riderDetails, setRiderDetails] = useState({});
+
+  useEffect(() => {
+    const url = `http://localhost:4000/rider/${id}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setRiderDetails(data));
+  }, [id]);
+
   return (
     <>
       <Navbar />
@@ -33,7 +47,7 @@ const RiderProfile = () => {
                     hover:text-indigo-900
                   "
                 >
-                  Adnan Sami Shazim
+                  {riderDetails.name}
                 </h4>
                 <button className="hidden rounded-lg focus:outline-none focus:shadow-outline">
                   <svg
@@ -54,56 +68,6 @@ const RiderProfile = () => {
                   </svg>
                 </button>
               </div>
-              <div className="flex flex-col flex-grow px-4 mt-5">
-                <nav className="flex-1 space-y-1 bg-white">
-                  <ul>
-                    <li>
-                      <a
-                        className="
-                        inline-flex
-                        items-center
-                        w-full
-                        px-4
-                        py-2
-                        mt-1
-                        text-base text-indigo-900
-                        transition
-                        duration-500
-                        ease-in-out
-                        transform
-                        rounded-lg
-                        focus:shadow-outline
-                        hover:bg-indigo-50
-                      "
-                        white=""
-                        href="/"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="w-4 h-4"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
-                          ></path>
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"
-                          ></path>
-                        </svg>
-                        <span className="ml-4"> Dashboard</span>
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
             </div>
           </div>
         </div>
@@ -117,7 +81,9 @@ const RiderProfile = () => {
               </div>
               <div className="px-4 mx-auto max-w-7xl sm:px-6 md:px-8">
                 <div className="py-4">
-                  <div className="rounded-lg bg-indigo-50 h-96"></div>
+                  <div className="rounded-lg bg-indigo-50 h-96">
+                    {/* <RiderProfileDetails riderDetails={riderDetails} /> */}
+                  </div>
                 </div>
               </div>
             </div>

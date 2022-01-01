@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/solid";
 
 const Navbar = () => {
+  //set the confirmed state to isAdmin//
+  // const [isAdmin, setIsAdmin] = useState(false);
+  // useEffect(() => {
+  //   fetch(`http://localhost:4000/isAdmin`, {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     // confirmation to search admins by their required emails//
+  //     body: JSON.stringify({ email: email }),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => setIsAdmin(data));
+  // }, [loggedInUser.email]);
   return (
     <section className="sticky z-10 drop-shadow-sm">
       <Popover className="relative bg-white">
@@ -34,7 +46,7 @@ const Navbar = () => {
                   Home
                 </Link>
                 <Link
-                  to="/admin/dashboard"
+                  to="admin"
                   className="text-base font-body text-secondary hover:text-gray-900"
                 >
                   Admin
@@ -87,7 +99,7 @@ const Navbar = () => {
                     Home
                   </Link>
                   <Link
-                    to="/admin/dashboard"
+                    to="admin"
                     className="text-base font-body text-secondary hover:text-gray-700"
                   >
                     Admin
