@@ -8,7 +8,7 @@ const Navbar = () => {
   //set the confirmed state to isAdmin//
   // const [isAdmin, setIsAdmin] = useState(false);
   // useEffect(() => {
-  //   fetch(`https://warm-dusk-05608.herokuapp.com//isAdmin`, {
+  //   fetch(`https://warm-dusk-05608.herokuapp.com/isAdmin`, {
   //     method: "POST",
   //     headers: { "Content-Type": "application/json" },
   //     // confirmation to search admins by their required emails//

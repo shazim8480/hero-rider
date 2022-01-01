@@ -5,7 +5,7 @@ const RidersManagement = () => {
   const [rider, setRider] = useState([]);
 
   useEffect(() => {
-    fetch(`https://warm-dusk-05608.herokuapp.com//riders`)
+    fetch(`https://warm-dusk-05608.herokuapp.com/riders`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

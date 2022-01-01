@@ -3,7 +3,7 @@ import React from "react";
 const RidersTable = ({ rider }) => {
   // delete service on click delete button //////////////////////////////////
   const deleteRider = (id) => {
-    const url = `https://warm-dusk-05608.herokuapp.com//deleteRider/${id}`;
+    const url = `https://warm-dusk-05608.herokuapp.com/deleteRider/${id}`;
     fetch(url, {
       method: "DELETE",
     })
